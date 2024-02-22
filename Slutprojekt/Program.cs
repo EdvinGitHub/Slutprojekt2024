@@ -2,10 +2,7 @@
 using Raylib_cs;
 
 
-static string GimmeHello()
-{
-  return "Hello World!";
-}
+
 
 
 

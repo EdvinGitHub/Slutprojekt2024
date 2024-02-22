@@ -8,5 +8,10 @@
         public float speed;
 
 
+        public void Draw()
+        {
+            
+        }
+
     }
 
