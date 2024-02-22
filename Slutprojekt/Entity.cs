@@ -1,10 +1,12 @@
 ﻿namespace Slutprojekt;
 
-public class Entity
-{
-    int hp;
 
-    int speed;
+    public class Entity
+    {
+        public int hp;
 
-    
-}
+        public float speed;
+
+
+    }
+
