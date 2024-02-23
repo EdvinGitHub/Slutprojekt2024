@@ -2,6 +2,7 @@
 using Raylib_cs;
 public class Player : Entity
 {
+    
     int maxhp = 3;
 
     float minspeed = 3;
@@ -16,10 +17,10 @@ public class Player : Entity
         {}
         if(Raylib.IsKeyDown(KeyboardKey.D))
         {}
-        if(Raylib.IsKeyDown(KeyboardKey.Space))
+        if(Raylib.IsKeyDown(KeyboardKey.Space) || Raylib.IsKeyDown(KeyboardKey.W))
         {}
-        // if(Raylib.IsKeyDown(KeyboardKey.S)) ?
-        // {}
+        if(Raylib.IsKeyDown(KeyboardKey.S)) 
+        {}
         
     }
 

@@ -2,11 +2,11 @@
 
 public class GameObjekt
 {
-    public void Update(float deltaTime)
+    public virtual void Update(float deltaTime)
     {
         
     }
-    public void Draw()
+    public virtual void Draw()
     {
 
     }
