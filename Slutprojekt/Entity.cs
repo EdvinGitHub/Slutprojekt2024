@@ -1,17 +1,15 @@
 ﻿namespace Slutprojekt;
 
+ 
 
-    public class Entity
+    public class Entity :GameObjekt
     {
         public int hp;
 
         public float speed;
-
-
-        public void Draw()
-        {
-            
-        }
+   
+    
+   
 
     }
 
