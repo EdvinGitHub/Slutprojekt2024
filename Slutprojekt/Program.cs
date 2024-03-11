@@ -3,11 +3,7 @@ using Raylib_cs;
 using Slutprojekt;
 
 Entity entity = new Entity();
-GameObjekt gameObjekt = new GameObjekt();
-Player player = new Player();
-Enemys enemys = new Enemys();
 Logic logic = new Logic();
-
 
 
 

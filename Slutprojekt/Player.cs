@@ -9,12 +9,13 @@ public class Player : Entity
     public Player()
     {
         hp = maxhp;
-        speed = minspeed;
+        speedX = minspeed;
+        speedY = minspeed;
     }
     public void PlayerMovment()
     {
         if(Raylib.IsKeyDown(KeyboardKey.A))
-        {}
+        {speedX = -3;}
         if(Raylib.IsKeyDown(KeyboardKey.D))
         {}
         if(Raylib.IsKeyDown(KeyboardKey.Space) || Raylib.IsKeyDown(KeyboardKey.W))
