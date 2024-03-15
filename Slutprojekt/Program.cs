@@ -2,8 +2,7 @@
 using Raylib_cs;
 using Slutprojekt;
 
-Entity entity = new Entity();
-Logic logic = new Logic();
+Last last = new Last();
 
 
 
@@ -12,8 +11,10 @@ Raylib.InitWindow(900,700,"Plat");
 Raylib.SetTargetFPS(60);
 while(true)
 {
+    float deltaTime = Raylib.GetFrameTime();
+    last.Update(deltaTime);
     Raylib.BeginDrawing();
     Raylib.ClearBackground(Color.Gray);
-    entity.Draw();
+    last.Draw();
     Raylib.EndDrawing();
 }

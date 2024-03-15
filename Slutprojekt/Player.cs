@@ -5,23 +5,32 @@ public class Player : Entity
     
     int maxhp = 3;
 
-    float minspeed = 3;
+    float minspeed = 50f;
+    float jumpForce = 700f;
     public Player()
     {
         hp = maxhp;
-        speedX = minspeed;
-        speedY = minspeed;
     }
+
+  
     public void PlayerMovment()
     {
+        
         if(Raylib.IsKeyDown(KeyboardKey.A))
-        {speedX = -3;}
+        {speedX = -minspeed;}
         if(Raylib.IsKeyDown(KeyboardKey.D))
-        {}
-        if(Raylib.IsKeyDown(KeyboardKey.Space) || Raylib.IsKeyDown(KeyboardKey.W))
-        {}
+        {speedX = minspeed;}
+        if(Raylib.IsKeyUp(KeyboardKey.D) && Raylib.IsKeyUp(KeyboardKey.A))
+        {if(speedX>0){speedX -= 5f;} 
+        if(speedX<0){speedX += 5f;}}
+
+       
+        if(Raylib.IsKeyPressed(KeyboardKey.Space) || Raylib.IsKeyPressed(KeyboardKey.W))
+        {speedY -= jumpForce;}
+        if(Raylib.IsKeyUp(KeyboardKey.Space) && Raylib.IsKeyUp(KeyboardKey.W))
+        {if(speedY <0){speedY += 10f;}}
         if(Raylib.IsKeyDown(KeyboardKey.S)) 
-        {}
+        {speedY = 0;}
         
     }
 
