@@ -4,35 +4,41 @@ using System.Numerics;
 using Raylib_cs;
 public class Last : Player
 {
-    bool groundTrue = false;
-    float gravity = -10f;
-    List<Rectangle> walls = new List<Rectangle>();
-    Rectangle wall1 = new Rectangle(0, 750 ,750, 50);
-    Rectangle test = new Rectangle(0, 750, 0, 0);
+
+   
     public override void Update(float deltaTime)
     {
-        walls.Add(wall1);
+        floor.Add(floor1);
         base.Update(deltaTime);
         PlayerMovment();
-        for (int i = 0; i < walls.Count; i++)
+
+        groundTrue = false;
+        for (int i = 0; i < floor.Count; i++)
         {
-            if(Raylib.CheckCollisionRecs(ground, walls[i]))
-            {groundTrue = true;
-            test.Position = walls[i].Position; 
-            ground.Y = test.Y-100;}
-            // else
-            // {groundTrue = false;}
+            if (Raylib.CheckCollisionRecs(groundCheck, floor[i]))
+            {
+                groundTrue = true;
+
+                test.Position = floor[i].Position;
+                groundCheck.Y = test.Y - 100;
+                velocity = 0;
+            }
 
         }
-        if(groundTrue == false)
-        {hej.Y -= gravity;}
+
+        velocity += gravity;
+        playerCharater.Y += velocity;
+
         if (groundTrue == true)
         {
-           
-            hej.Y = ground.Y - 100;
+            if (Raylib.IsKeyDown(KeyboardKey.Space) || Raylib.IsKeyDown(KeyboardKey.W) == false)
+            {
+
+                playerCharater.Y = groundCheck.Y - 100;
+            }
 
         }
-       
-        
+
+
     }
 }

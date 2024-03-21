@@ -9,7 +9,7 @@ Last last = new Last();
 
 Raylib.InitWindow(900,700,"Plat");
 Raylib.SetTargetFPS(60);
-while(true)
+while(!Raylib.WindowShouldClose())
 {
     float deltaTime = Raylib.GetFrameTime();
     last.Update(deltaTime);
