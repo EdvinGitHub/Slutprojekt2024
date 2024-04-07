@@ -12,7 +12,47 @@ public class Player : Entity
         hp = maxhp;
     }
     
-  
+        
+  public override void Update(float deltaTime)
+    {
+      
+      
+        base.Update(deltaTime);
+        PlayerMovment();
+        playerGroundCheck();
+        
+        velocity += gravity;
+        playerCharater.Y += velocity;
+
+
+
+    }
+    public void playerGroundCheck()
+    {
+        groundTrue = false;
+        for (int i = 0; i < floor.Count; i++)
+        {
+            if (Raylib.CheckCollisionRecs(groundCheck, floor[i]))
+            {
+                groundTrue = true;
+
+                test.Position = floor[i].Position;
+                groundCheck.Y = test.Y - 100;
+                velocity = 0;
+            }
+
+        }
+           if (groundTrue == true)
+        {
+            if (Raylib.IsKeyDown(KeyboardKey.Space) || Raylib.IsKeyDown(KeyboardKey.W) == false)
+            {
+
+                playerCharater.Y = groundCheck.Y - 100;
+            }
+
+        }
+
+    }
     public void PlayerMovment()
     {
         

@@ -12,7 +12,7 @@ using Raylib_cs;
     protected List<Rectangle> floor = new List<Rectangle>();
     protected Rectangle floor1 = new Rectangle(0, 750, 750, 50);
     protected Rectangle test = new Rectangle(0, 750, 0, 0);
-    
+
     public int hp;
     public float speedX = 0;
     public float speedY = 0;
@@ -23,6 +23,7 @@ using Raylib_cs;
 
     // private Vector2 velocity;
       
+public void 
       
 
 
