@@ -3,7 +3,8 @@ using Raylib_cs;
 using Slutprojekt;
 
 Player playerScript = new Player();
-
+Entity entity = new Entity();
+Enemys enemys = new Enemys();
 
 
 
@@ -13,8 +14,10 @@ while(!Raylib.WindowShouldClose())
 {
     float deltaTime = Raylib.GetFrameTime();
     playerScript.Update(deltaTime);
+    playerScript.Draw();
+    enemys.Update(deltaTime);
+    enemys.Draw();
     Raylib.BeginDrawing();
     Raylib.ClearBackground(Color.Gray);
-    playerScript.Draw();
     Raylib.EndDrawing();
 }

@@ -15,17 +15,22 @@ public class Player : Entity
         
   public override void Update(float deltaTime)
     {
-      
-      
+        
         base.Update(deltaTime);
         PlayerMovment();
         playerGroundCheck();
         
         velocity += gravity;
-        playerCharater.Y += velocity;
+        speedY += velocity;
 
+        // playerCharater.Y *= velocity;
 
-
+    }
+    public override void Draw()
+    {
+        base.Draw();
+         Raylib.DrawRectangleRec(playerCharater, Color.SkyBlue);
+        // Raylib.DrawRectangleRec(groundCheck, Color.Red);
     }
     public void playerGroundCheck()
     {
@@ -37,17 +42,21 @@ public class Player : Entity
                 groundTrue = true;
 
                 test.Position = floor[i].Position;
-                groundCheck.Y = test.Y - 100;
+                groundCheck.Y = test.Y - 50;
                 velocity = 0;
             }
 
         }
-           if (groundTrue == true)
+        // if (groundTrue == false)
+        // {
+        // }
+        if (groundTrue == true)
         {
             if (Raylib.IsKeyDown(KeyboardKey.Space) || Raylib.IsKeyDown(KeyboardKey.W) == false)
             {
+                playerCharater.Y = groundCheck.Y - playerCharater.Height;
+                speedY = 0;
 
-                playerCharater.Y = groundCheck.Y - 100;
             }
 
         }
