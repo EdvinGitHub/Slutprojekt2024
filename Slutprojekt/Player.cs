@@ -7,7 +7,7 @@ public class PlayerSkript : Entity
     protected Rectangle test = new Rectangle(0, 750, 0, 0);
     
     int maxhp = 3;
-
+    bool groundTrue = true;
     float minspeed = 150f;
     float jumpForce = 1300f;
     public PlayerSkript()
@@ -24,13 +24,8 @@ public class PlayerSkript : Entity
         base.Update(deltaTime);
         PlayerMovment();
         playerGroundCheck();
-        
-        velocity += gravity;
-        speedY += velocity;
-        playerCharater.Y +=  speedY * deltaTime;
-        playerCharater.X +=  speedX * deltaTime;
-        groundCheck.X = playerCharater.X;
-        groundCheck.Y = playerCharater.Y + 175;
+        PlayerUpdates(deltaTime);
+      
         // playerCharater.Y *= velocity;
   
     }
@@ -41,6 +36,16 @@ public class PlayerSkript : Entity
         Raylib.DrawRectangleRec(playerCharater, Color.SkyBlue);
         // Raylib.DrawRectangleRec(groundCheck, Color.Red);
     }
+    public void PlayerUpdates(float deltaTime)
+    {
+        velocity += gravity;
+        speedY += velocity;
+        playerCharater.Y +=  speedY * deltaTime;
+        playerCharater.X +=  speedX * deltaTime;
+        groundCheck.X = playerCharater.X;
+        groundCheck.Y = playerCharater.Y + 175;
+    }
+ 
     public void playerGroundCheck()
     {
      

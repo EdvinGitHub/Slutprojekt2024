@@ -21,7 +21,7 @@ using Raylib_cs;
     public float speedX = 0;
     public float speedY = 0;
 
-    protected bool groundTrue = true;
+   
     protected float gravity = 2f;
     protected float velocity = 0;
 
@@ -41,7 +41,7 @@ public virtual void Update(float deltaTime)
    
     if (listToAdd == 1)
   {
-   enemytyp1.Add(enemy);
+    enemytyp1.Add(enemy);
     floor.Add(floor1);
     // gravityList.Add(enemy);
     // gravityList.Add(playerCharater);

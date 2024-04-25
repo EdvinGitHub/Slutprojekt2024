@@ -15,6 +15,7 @@ public class UpdateSkripts : GameObjekt
     start--;
     }
     // entity.Update(deltaTime);
+    
     playerSkript.Update(deltaTime);
     enemys.Update(deltaTime);
      Colision();
@@ -24,8 +25,8 @@ public class UpdateSkripts : GameObjekt
     enemys.Draw();
 
     }
-     public void Colision()
-  {
+    public void Colision()
+    {
     for (int i = 0; i <entity.enemytyp1.Count; i++)
     {
     if(Raylib.CheckCollisionRecs(playerSkript.playerCharater, entity.enemytyp1[i]))
