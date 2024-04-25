@@ -9,7 +9,7 @@ public class PlayerSkript : Entity
     int maxhp = 3;
     bool groundTrue = true;
     int amountOfAirJumps = 1;
-    float minspeed = 150f;
+    float minspeed = 300f;
     float jumpForce = 700f;
     public PlayerSkript()
     {
@@ -20,17 +20,13 @@ public class PlayerSkript : Entity
 
   public override void Update(float deltaTime)
     {
-        
-
         // base.Update(deltaTime);
         PlayerStuff();
         PlayerMovment();
         PlayerUpdates(deltaTime);
         playerGroundCheck();
-        PlayerOutOfBounds();
-      
+        PlayerOutOfBounds();   
         // playerCharater.Y *= velocity;
-  
     }
     public override void Draw()
     {

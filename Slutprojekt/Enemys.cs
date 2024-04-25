@@ -4,6 +4,8 @@ public class Enemys: Entity
 {
 //    PlayerSkript playerSkript = new PlayerSkript();
     float minspeed = 20;
+
+
     public override void Update(float deltaTime)
     {
         EnemyMovment();
@@ -17,6 +19,7 @@ public class Enemys: Entity
     }
     public void EnemyMovment()
     {
+        
         if (enemy.X > 700)
         {speedX = -minspeed;
         // Console.WriteLine("hej");
@@ -26,6 +29,7 @@ public class Enemys: Entity
         // Console.WriteLine("hejdå");
         }
         enemy.X += speedX;
+       
     }
     public override void Draw()
     {

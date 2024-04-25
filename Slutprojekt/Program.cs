@@ -35,6 +35,7 @@ Texture2D tiles = Raylib.LoadTexture(@"tiles.png");
 
 Raylib.SetTargetFPS(60);
 
+
 while(!Raylib.WindowShouldClose())
 {
     float deltaTime = Raylib.GetFrameTime();
