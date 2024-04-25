@@ -6,7 +6,7 @@ using Raylib_cs;
 // ärdra så att game objsekt är inte för entity 
   public class Entity  
   {
-    protected List<Rectangle> enemytyp1 = new List<Rectangle>();
+    public List<Rectangle> enemytyp1 = new List<Rectangle>();
 
 
     protected Rectangle enemy = new Rectangle(100, 100, 50,50);
@@ -46,10 +46,8 @@ public virtual void Update(float deltaTime)
     // gravityList.Add(enemy);
     // gravityList.Add(playerCharater);
     listToAdd--;
-
-    Console.WriteLine("sasda");
   }
-  
+  // Colision();
       
 }
 
@@ -61,6 +59,7 @@ public virtual void Draw()
   // Raylib.DrawRectangleRec(groundCheck, Color.Red);
 }
 
+ 
 // public void Gravity()
 // {
 //  for (int i = 0; i < gravityList.Count; i++)

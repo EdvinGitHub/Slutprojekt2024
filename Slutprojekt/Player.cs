@@ -32,17 +32,14 @@ public class PlayerSkript : Entity
         groundCheck.X = playerCharater.X;
         groundCheck.Y = playerCharater.Y + 175;
         // playerCharater.Y *= velocity;
-        // if (groundCheck.Y > 700)
-        // {
-
-        // }
+  
     }
     public override void Draw()
     {
         
      
         Raylib.DrawRectangleRec(playerCharater, Color.SkyBlue);
-        Raylib.DrawRectangleRec(groundCheck, Color.Red);
+        // Raylib.DrawRectangleRec(groundCheck, Color.Red);
     }
     public void playerGroundCheck()
     {
@@ -84,8 +81,8 @@ public class PlayerSkript : Entity
         if(Raylib.IsKeyDown(KeyboardKey.D))
         {speedX = minspeed;}
         if(Raylib.IsKeyUp(KeyboardKey.D) && Raylib.IsKeyUp(KeyboardKey.A))
-        {if(speedX>0){speedX -= 5f;} 
-        if(speedX<0){speedX += 5f;}}
+        {if(speedX>0){speedX -= 10f;} 
+        if(speedX<0){speedX += 10f;}}
        
         if(Raylib.IsKeyPressed(KeyboardKey.Space) || Raylib.IsKeyPressed(KeyboardKey.W))
         {velocity = 0 ;
