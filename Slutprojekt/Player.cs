@@ -8,6 +8,7 @@ public class PlayerSkript : Entity
     
     int maxhp = 3;
     bool groundTrue = true;
+    int amountOfAirJumps = 1;
     float minspeed = 150f;
     float jumpForce = 700f;
     public PlayerSkript()
@@ -61,7 +62,7 @@ public class PlayerSkript : Entity
         if (Raylib.CheckCollisionRecs(groundCheck, floor[i]))
         {
             groundTrue = true;
-
+            amountOfAirJumps = 1;
             test.Position = floor[i].Position;
             groundCheck.Y = test.Y - 50;
             velocity = 0;
@@ -95,10 +96,15 @@ public class PlayerSkript : Entity
         {if(speedX>0){speedX -= 10f;} 
         if(speedX<0){speedX += 10f;}}
        
+        if(amountOfAirJumps >0)
+        {
         if(Raylib.IsKeyPressed(KeyboardKey.Space) || Raylib.IsKeyPressed(KeyboardKey.W))
         {velocity = 0 ;
         speedY = 0 ;
-        speedY -= jumpForce;}
+        speedY -= jumpForce;
+        amountOfAirJumps--;
+        }
+        }
         if(Raylib.IsKeyUp(KeyboardKey.Space) && Raylib.IsKeyUp(KeyboardKey.W))
         {if(speedY <0){speedY += 10f;}}
         if(Raylib.IsKeyDown(KeyboardKey.S)) 
