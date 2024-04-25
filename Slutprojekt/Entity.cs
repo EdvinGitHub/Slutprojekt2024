@@ -9,10 +9,10 @@ using Raylib_cs;
     public List<Rectangle> enemytyp1 = new List<Rectangle>();
 
 
-    protected Rectangle enemy = new Rectangle(100, 100, 50,50);
+    public Rectangle enemy = new Rectangle(100, 100, 50,50);
 
-      protected List<Rectangle> floor = new List<Rectangle>();
-    protected Rectangle floor1 = new Rectangle(0, 750, 750, 50);
+    protected List<Rectangle> floor = new List<Rectangle>();
+    protected Rectangle floor1 = new Rectangle(0, 684, 900, 50);
       // protected List<Rectangle> gravityList = new List<Rectangle>();
       public Rectangle playerCharater = new Rectangle(200, 100, 100,200);
      int listToAdd = 1;
@@ -39,6 +39,34 @@ public virtual void Update(float deltaTime)
   // velocity.Equals(hej);
   // player.PlayerMovment();
    
+  // Colision();
+      
+}
+public void EnemysStuff()
+{
+  // if (listToAdd == 1)
+  // {
+    enemytyp1.Clear();
+    enemytyp1.Add(enemy);
+    // floor.Add(floor1);
+    // gravityList.Add(enemy);
+    // gravityList.Add(playerCharater);
+  //   listToAdd--;
+  // }
+}
+  public void PlayerStuff()
+  {
+    if (listToAdd == 1)
+  {
+    // enemytyp1.Add(enemy);
+    floor.Add(floor1);
+    // gravityList.Add(enemy);
+    // gravityList.Add(playerCharater);
+    listToAdd--;
+  }
+  }
+  public void EnemyStuff()
+  {
     if (listToAdd == 1)
   {
     enemytyp1.Add(enemy);
@@ -47,9 +75,8 @@ public virtual void Update(float deltaTime)
     // gravityList.Add(playerCharater);
     listToAdd--;
   }
-  // Colision();
-      
-}
+  
+  }
 
 public virtual void Draw()
 {

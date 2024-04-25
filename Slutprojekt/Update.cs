@@ -14,22 +14,22 @@ public class UpdateSkripts : GameObjekt
     enemys.Start();
     start--;
     }
-    // entity.Update(deltaTime);
-    
+
     playerSkript.Update(deltaTime);
+    // entity.Update(deltaTime);
     enemys.Update(deltaTime);
-     Colision();
+    //  Colision();
     // enemy.EnemyMovment();
-    
+    // Raylib.DrawRectangleRec(playerSkript.playerCharater, Color.SkyBlue);
     playerSkript.Draw();
     enemys.Draw();
 
     }
     public void Colision()
     {
-    for (int i = 0; i <entity.enemytyp1.Count; i++)
+    for (int i = 0; i < enemys.enemytyp1.Count; i++)
     {
-    if(Raylib.CheckCollisionRecs(playerSkript.playerCharater, entity.enemytyp1[i]))
+    if(Raylib.CheckCollisionRecs(playerSkript.playerCharater, enemys.enemytyp1[i]))
     {
       Console.WriteLine("hej"); 
     }

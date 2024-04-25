@@ -2,11 +2,12 @@
 using Raylib_cs;
 public class Enemys: Entity
 {
-   PlayerSkript playerSkript = new PlayerSkript();
+//    PlayerSkript playerSkript = new PlayerSkript();
     float minspeed = 20;
     public override void Update(float deltaTime)
     {
         EnemyMovment();
+        EnemysStuff();
         // base.Update(deltaTime);
     }
     public void Start()

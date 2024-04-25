@@ -3,9 +3,9 @@ using Raylib_cs;
 using Slutprojekt;
 using System.Numerics;
 
-PlayerSkript playerScript = new PlayerSkript();
-Entity entity = new Entity();
-Enemys enemys = new Enemys();
+// PlayerSkript playerScript = new PlayerSkript();
+// Entity entity = new Entity();
+// Enemys enemys = new Enemys();
 UpdateSkripts updateSkripts = new UpdateSkripts();
 
 int screenHeight = 700;
@@ -24,13 +24,13 @@ Texture2D tiles = Raylib.LoadTexture(@"tiles.png");
     Rectangle sourceRec = new Rectangle(105, 0, frameWidth, frameHeight ); 
 
     // Destination rectangle (screen rectangle where drawing part of texture)
-    Rectangle destRec = new Rectangle(  0, 0 , frameWidth*5, frameHeight*5 );
+    Rectangle destRec = new Rectangle(  0, 650, 900, frameHeight*5 );
 
     // Origin of the texture (rotation/scale point), it's relative to destination rectangle size
-    Vector2 origin = new Vector2(frameWidth, frameHeight) ;
+    Vector2 origin = new Vector2(0, frameHeight) ;
 
     int rotation = 0;
-    Raylib.DrawTexture(tiles, 100, 200, Color.Black);
+    // Raylib.DrawTexture(tiles, 100, 200, Color.Black);
 
 
 Raylib.SetTargetFPS(60);
@@ -43,12 +43,13 @@ while(!Raylib.WindowShouldClose())
     // enemys.EnemyMovment();
     // playerScript.Draw();
     // enemys.Draw();
-    updateSkripts.Update(deltaTime);
     // Console.WriteLine(playerScript.playerCharater.X);
+    updateSkripts.Update(deltaTime);
+    updateSkripts.Colision();
 
     Raylib.DrawTexture(tiles, 40, 300, Color.White);
    
-    Raylib.DrawTexturePro(tiles ,sourceRec, destRec, origin, rotation, Color.White);
+    Raylib.DrawTexturePro(tiles, sourceRec, destRec, origin, rotation, Color.White);
     Raylib.BeginDrawing();
     Raylib.ClearBackground(Color.Gray);
     Raylib.EndDrawing();

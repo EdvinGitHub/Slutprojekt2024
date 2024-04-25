@@ -9,7 +9,7 @@ public class PlayerSkript : Entity
     int maxhp = 3;
     bool groundTrue = true;
     float minspeed = 150f;
-    float jumpForce = 1300f;
+    float jumpForce = 700f;
     public PlayerSkript()
     {
         hp = maxhp;
@@ -21,10 +21,12 @@ public class PlayerSkript : Entity
     {
         
 
-        base.Update(deltaTime);
+        // base.Update(deltaTime);
+        PlayerStuff();
         PlayerMovment();
-        playerGroundCheck();
         PlayerUpdates(deltaTime);
+        playerGroundCheck();
+        PlayerOutOfBounds();
       
         // playerCharater.Y *= velocity;
   
@@ -38,18 +40,21 @@ public class PlayerSkript : Entity
     }
     public void PlayerUpdates(float deltaTime)
     {
+        
         velocity += gravity;
         speedY += velocity;
         playerCharater.Y +=  speedY * deltaTime;
         playerCharater.X +=  speedX * deltaTime;
         groundCheck.X = playerCharater.X;
         groundCheck.Y = playerCharater.Y + 175;
+
+        
     }
  
     public void playerGroundCheck()
     {
      
-        {
+    {
     groundTrue = false;
     for (int i = 0; i < floor.Count; i++)
     {
@@ -68,12 +73,13 @@ public class PlayerSkript : Entity
   }
         if (groundTrue == true)
         {
-            if (Raylib.IsKeyDown(KeyboardKey.Space) || Raylib.IsKeyDown(KeyboardKey.W) == false)
-            {
-                playerCharater.Y = groundCheck.Y - playerCharater.Height;
-                speedY = 0;
+                if(playerCharater.Y >= groundCheck.Y - playerCharater.Height)
+                {speedY = 0;
+                playerCharater.Y = groundCheck.Y -playerCharater.Height;}
 
-            }
+            // if (Raylib.IsKeyDown(KeyboardKey.Space) || Raylib.IsKeyDown(KeyboardKey.W) == false)
+            // {
+            // }
 
     }
 
@@ -99,5 +105,20 @@ public class PlayerSkript : Entity
         {speedY = 0;}
         
     }
+    public void PlayerOutOfBounds()
+    {
+        if(playerCharater.X<0)
+        {playerCharater.X = 0;
+        speedX = 0;}
+        if(playerCharater.X>800)
+        {playerCharater.X = 800;
+        speedX = 0;}
+        if(playerCharater.Y<0)
+        {speedY = 0;
+        playerCharater.Y = 0;}
+        if(playerCharater.Y>700)
+        {playerCharater.Y = 700;
+        speedY = 0;}
 
+    }
 }
