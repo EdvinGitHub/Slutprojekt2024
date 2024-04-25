@@ -2,7 +2,7 @@
 using Raylib_cs;
 public class PlayerSkript : Entity
 {
-        protected Rectangle groundCheck = new Rectangle(275, 250, 100,100);
+    protected Rectangle groundCheck = new Rectangle(275, 250, 100,100);
 
     protected Rectangle test = new Rectangle(0, 750, 0, 0);
     
