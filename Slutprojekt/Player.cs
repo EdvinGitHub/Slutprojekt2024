@@ -71,7 +71,7 @@ public class PlayerSkript : Entity
     }
       
 
-  }
+    }
         if (groundTrue == true)
         {
                 if(playerCharater.Y >= groundCheck.Y - playerCharater.Height)
