@@ -2,25 +2,29 @@
 using Raylib_cs;
 public class Enemys: Entity
 {
-   PlayerSkript playerSkript = new PlayerSkript();
-    float minspeed = 1f;
+//    PlayerSkript playerSkript = new PlayerSkript();
+    float minspeed = 20;
     public override void Update(float deltaTime)
     {
-        
+        EnemyMovment();
         
     }
+    public void Start()
+    {
 
+        speedX = minspeed;
+    }
     public void EnemyMovment()
     {
-        enemy.X += speedX;
-        if (playerSkript.playerCharater.X > enemy.X)
-        {speedX = minspeed;
+        if (enemy.X > 700)
+        {speedX = -minspeed;
         // Console.WriteLine("hej");
         }
-        if (playerSkript.playerCharater.X < enemy.X)
-        {speedX = -minspeed;   
+        if (enemy.X < 0)
+        {speedX = minspeed;   
         // Console.WriteLine("hejdå");
         }
+        enemy.X += speedX;
     }
     public override void Draw()
     {

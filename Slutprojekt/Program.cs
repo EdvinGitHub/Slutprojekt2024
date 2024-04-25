@@ -14,7 +14,7 @@ int screenWidth = 900;
 // Texture2D texture;
 
 // Texture2D tiles = Raylib.LoadTextureFromImage(@tiles.png);
-Texture2D tiles = Raylib.LoadTexture( "tiles.png");
+Texture2D tiles = Raylib.LoadTexture(@"tiles.png");
     float frameWidth = tiles.Width/6;
     float frameHeight = tiles.Height;
   
@@ -29,7 +29,7 @@ Texture2D tiles = Raylib.LoadTexture( "tiles.png");
     Vector2 origin = new Vector2(frameWidth, frameHeight) ;
 
     int rotation = 0;
-    // Raylib.DrawTexture(tiles, 100, 200, Color.White);
+    Raylib.DrawTexture(tiles, 100, 200, Color.Black);
 
 Raylib.InitWindow(screenWidth,screenHeight,"Plat");
 
@@ -41,14 +41,15 @@ while(!Raylib.WindowShouldClose())
     // playerScript.Update(deltaTime);
     // enemys.Update(deltaTime);
     // enemys.EnemyMovment();
-    updateSkripts.Update(deltaTime);
+    // updateSkripts.Update(deltaTime);
     // playerScript.Draw();
     // enemys.Draw();
     Console.WriteLine(playerScript.playerCharater.X);
 
     //  Raylib.DrawTextureRec(tiles, source, position, Color.White);
     Raylib.DrawTexturePro(tiles ,sourceRec, destRec, origin, rotation, Color.Black);
+    Raylib.DrawTexture(tiles, 40, 300, Color.White);
     Raylib.BeginDrawing();
-    Raylib.ClearBackground(Color.Gray);
-    Raylib.EndDrawing();
+    // Raylib.ClearBackground(Color.Gray);
+    // Raylib.EndDrawing();
 }

@@ -15,7 +15,7 @@ public class PlayerSkript : Entity
         hp = maxhp;
     }
     
-        public Rectangle playerCharater = new Rectangle(200, 100, 100,200);
+        
 
   public override void Update(float deltaTime)
     {
@@ -27,15 +27,15 @@ public class PlayerSkript : Entity
         
         velocity += gravity;
         speedY += velocity;
-        playerCharater.X +=  speedX * deltaTime;
         playerCharater.Y +=  speedY * deltaTime;
-        groundCheck.X = playerCharater.X - 25;
+        playerCharater.X +=  speedX * deltaTime;
+        groundCheck.X = playerCharater.X;
         groundCheck.Y = playerCharater.Y + 175;
         // playerCharater.Y *= velocity;
-        if (groundCheck.Y > 700)
-        {
+        // if (groundCheck.Y > 700)
+        // {
 
-        }
+        // }
     }
     public override void Draw()
     {

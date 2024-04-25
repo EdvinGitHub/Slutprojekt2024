@@ -13,6 +13,8 @@ using Raylib_cs;
 
       protected List<Rectangle> floor = new List<Rectangle>();
     protected Rectangle floor1 = new Rectangle(0, 750, 750, 50);
+      // protected List<Rectangle> gravityList = new List<Rectangle>();
+      public Rectangle playerCharater = new Rectangle(200, 100, 100,200);
      int listToAdd = 1;
 
     public int hp;
@@ -31,7 +33,7 @@ using Raylib_cs;
 
 public virtual void Update(float deltaTime)
 {
- enemytyp1.Add(enemy);
+ 
   // floor.Add(floor1);
   // velocity = Vector2.Normalize(hej.Position);
   // velocity.Equals(hej);
@@ -39,9 +41,12 @@ public virtual void Update(float deltaTime)
    
     if (listToAdd == 1)
   {
+   enemytyp1.Add(enemy);
     floor.Add(floor1);
-    
+    // gravityList.Add(enemy);
+    // gravityList.Add(playerCharater);
     listToAdd--;
+
     Console.WriteLine("sasda");
   }
   
@@ -56,5 +61,12 @@ public virtual void Draw()
   // Raylib.DrawRectangleRec(groundCheck, Color.Red);
 }
 
+// public void Gravity()
+// {
+//  for (int i = 0; i < gravityList.Count; i++)
+//  {
+ 
+//  }
+// }
   }
 
