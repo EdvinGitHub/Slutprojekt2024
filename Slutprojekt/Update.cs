@@ -4,7 +4,7 @@ public class UpdateSkripts : GameObjekt
 {
     PlayerSkript playerSkript = new PlayerSkript();
     Enemys enemys = new Enemys();
-    Entity entity = new Entity();
+    // Entity entity = new Entity();
     // Maps maps = new Maps();
     int start= 1;
     public override void Update(float deltaTime)
