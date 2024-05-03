@@ -14,8 +14,8 @@ using Raylib_cs;
     protected List<Rectangle> floor = new List<Rectangle>();
     protected Rectangle floor1 = new Rectangle(0, 684, 900, 50);
       // protected List<Rectangle> gravityList = new List<Rectangle>();
-      public Rectangle playerCharater = new Rectangle(200, 300, 100,200);
-     int listToAdd = 1;
+    public Rectangle playerCharater = new Rectangle(200, 300, 100,200);
+    int listToAdd = 1;
 
     public int hp;
     public float speedX = 0;
@@ -65,18 +65,18 @@ public void EnemysStuff()
     listToAdd--;
   }
   }
-  public void EnemyStuff()
-  {
-    if (listToAdd == 1)
-  {
-    enemytyp1.Add(enemy);
-    floor.Add(floor1);
-    // gravityList.Add(enemy);
-    // gravityList.Add(playerCharater);
-    listToAdd--;
-  }
+  // public void EnemyStuff()
+  // {
+  //   if (listToAdd == 1)
+  // {
+  //   enemytyp1.Add(enemy);
+  //   floor.Add(floor1);
+  //   // gravityList.Add(enemy);
+  //   // gravityList.Add(playerCharater);
+  //   listToAdd--;
+  // }
   
-  }
+  // }  
 
 public virtual void Draw()
 {
