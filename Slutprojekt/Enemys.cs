@@ -1,8 +1,8 @@
 ﻿namespace Slutprojekt;
 using Raylib_cs;
-public class Enemys: Entity
+public class Enemys : Entity
 {
-//    PlayerSkript playerSkript = new PlayerSkript();
+    //    PlayerSkript playerSkript = new PlayerSkript();
     float minspeed = 20;
 
 
@@ -14,22 +14,21 @@ public class Enemys: Entity
     }
     public void Start()
     {
-
         speedX = minspeed;
     }
     public void EnemyMovment()
     {
-        
+
         if (enemy.X > 700)
-        {speedX = -minspeed;
-        // Console.WriteLine("hej");
+        {
+            speedX = -minspeed;
         }
         if (enemy.X < 0)
-        {speedX = minspeed;   
-        // Console.WriteLine("hejdå");
+        {
+            speedX = minspeed;
         }
         enemy.X += speedX;
-       
+
     }
     public override void Draw()
     {

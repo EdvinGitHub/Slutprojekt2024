@@ -2,37 +2,32 @@
 using Raylib_cs;
 public class UpdateSkripts : GameObjekt
 {
-    PlayerSkript playerSkript = new PlayerSkript();
-    Enemys enemys = new Enemys();
-    // Entity entity = new Entity();
-    // Maps maps = new Maps();
-    int start= 1;
-    public override void Update(float deltaTime)
-    {
+  PlayerSkript playerSkript = new PlayerSkript();
+  Enemys enemys = new Enemys();
+
+  int start = 1;
+  public override void Update(float deltaTime)
+  {
     if (start == 1)
     {
-    enemys.Start();
-    start--;
+      enemys.Start();
+      start--;
     }
 
     playerSkript.Update(deltaTime);
-    // entity.Update(deltaTime);
     enemys.Update(deltaTime);
-    //  Colision();
-    // enemy.EnemyMovment();
-    // Raylib.DrawRectangleRec(playerSkript.playerCharater, Color.SkyBlue);
     playerSkript.Draw();
     enemys.Draw();
 
-    }
-    public void Colision()
-    {
+  }
+  public void Colision()
+  {
     for (int i = 0; i < enemys.enemytyp1.Count; i++)
     {
-    if(Raylib.CheckCollisionRecs(playerSkript.playerCharater, enemys.enemytyp1[i]))
-    {
-      Console.WriteLine("hej"); 
-    }
+      if (Raylib.CheckCollisionRecs(playerSkript.playerCharater, enemys.enemytyp1[i]))
+      {
+        Console.WriteLine("hej");
+      }
     }
   }
 }
