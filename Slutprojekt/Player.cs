@@ -24,7 +24,7 @@ public class PlayerSkript : Entity
         PlayerStuff();
         PlayerMovment();
         PlayerUpdates(deltaTime);
-        playerGroundCheck();
+        PlayerGroundCheck();
         PlayerOutOfBounds();
         // playerCharater.Y *= velocity;
     }
@@ -48,7 +48,7 @@ public class PlayerSkript : Entity
 
     }
 
-    public void playerGroundCheck()
+    public void PlayerGroundCheck()
     {
 
         {

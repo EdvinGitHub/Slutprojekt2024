@@ -10,7 +10,7 @@ public class Enemys : Entity
     {
         EnemyMovment();
         EnemysStuff();
-        // base.Update(deltaTime);
+        // base.Update(deltaTime);  
     }
     public void Start()
     {
