@@ -30,8 +30,6 @@ public class PlayerSkript : Entity
     }
     public override void Draw()
     {
-
-
         Raylib.DrawRectangleRec(playerCharater, Color.SkyBlue);
         // Raylib.DrawRectangleRec(groundCheck, Color.Red);
     }
